@@ -1,0 +1,13 @@
+device_id,name,brand,category,release_date,launch_price,currency,status,specs
+LP001,Demo Titan 16 Gaming,Acme,Laptop,2024-03-01,129999,INR,Active,RAM=16 GB;Storage=1 TB;Display=16 inch;GPU=Dedicated 8 GB
+LP002,Demo Aero 14 Ultrabook,Zenith,Laptop,2024-06-01,89999,INR,Active,RAM=16 GB;Storage=512 GB;Display=14 inch;GPU=Integrated
+LP003,Demo Studio 15 Creator,Nova,Laptop,2024-01-01,149999,INR,Active,RAM=32 GB;Storage=1 TB;Display=15.6 inch;GPU=Dedicated 12 GB
+LP004,Demo Office 15 Everyday,Orbit,Laptop,2024-09-01,54999,INR,Active,RAM=8 GB;Storage=512 GB;Display=15.6 inch;GPU=Integrated
+LP005,Demo Blade 17 Pro,Acme,Laptop,2024-11-01,169999,INR,Active,RAM=32 GB;Storage=2 TB;Display=17 inch;GPU=Dedicated 16 GB
+LP006,Demo Flex 13 Convertible,Kestrel,Laptop,2025-09-01,99999,INR,Active,RAM=16 GB;Storage=512 GB;Display=13.3 inch;GPU=Integrated
+SP001,Demo Nova X Ultra,Nova,Smartphone,2024-02-01,124999,INR,Active,RAM=12 GB;Storage=512 GB;Display=6.8 inch;Battery=5000 mAh;Camera=200 MP
+SP002,Demo Orbit 9 Pro,Orbit,Smartphone,2024-05-01,99999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.7 inch;Battery=4800 mAh;Camera=50 MP
+SP003,Demo Zenith S Lite,Zenith,Smartphone,2024-08-01,34999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.5 inch;Battery=5000 mAh;Camera=64 MP
+SP004,Demo Kestrel One,Kestrel,Smartphone,2024-04-01,69999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.4 inch;Battery=4500 mAh;Camera=50 MP
+SP005,Demo Acme Fold,Acme,Smartphone,2024-10-01,159999,INR,Active,RAM=12 GB;Storage=512 GB;Display=7.6 inch;Battery=4400 mAh;Camera=50 MP
+SP006,Demo Nova Mini,Nova,Smartphone,2025-08-01,44999,INR,Active,RAM=6 GB;Storage=128 GB;Display=6.1 inch;Battery=4000 mAh;Camera=48 MP
