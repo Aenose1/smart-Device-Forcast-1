@@ -70,11 +70,15 @@ function explain(status: number, data: any): string {
     return "The server did not answer correctly. Make sure the backend is running (uvicorn on port 8000) and try again.";
   return `Request failed (HTTP ${status}).`;
 }
+const API_BASE_URL = (import.meta.env.VITE_API_URL || "").replace(/\/+$/, "");
 
+function apiUrl(path: string): string {
+  return `${API_BASE_URL}${path}`;
+}
 async function request<T>(method: string, url: string, body?: unknown, form?: FormData): Promise<T> {
   let res: Response;
   try {
-    res = await fetch(url, {
+    res = await fetch(apiUrl(url), {
       method, credentials: "same-origin",
       headers: body !== undefined ? { "Content-Type": "application/json" } : undefined,
       body: form ?? (body !== undefined ? JSON.stringify(body) : undefined),
