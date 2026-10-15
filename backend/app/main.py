@@ -33,7 +33,6 @@ async def lifespan(_: FastAPI):
 
 app = FastAPI(title="Smart Device Price Prediction & 3-Year Forecasting System", version="1.0.0", lifespan=lifespan,
               docs_url="/api/docs", openapi_url="/api/openapi.json", redoc_url=None)
-install_handlers(app)
 
 install_handlers(app)
 app.add_middleware(
