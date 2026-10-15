@@ -33,9 +33,9 @@ export default function PriceChart({ history, path, currency, height = 340 }: Pr
             formatter={(v: any, name: string) => [Array.isArray(v) ? `${money(v[0], currency)} – ${money(v[1], currency)}` : money(Number(v), currency), name]}
           />
           <Legend verticalAlign="top" height={28} />
-          {path && <Area dataKey="band" name="Approx. 95% range" stroke="none" fill="#b46a00" fillOpacity={0.14} isAnimationActive={false} />}
-          <Line dataKey="hist" name="Historical price" stroke="#0e5a6b" strokeWidth={2.2} dot={history.length < 40} connectNulls isAnimationActive={false} />
-          {path && <Line dataKey="fcst" name="Estimated future price" stroke="#b46a00" strokeWidth={2.2} strokeDasharray="6 4" dot={false} isAnimationActive={false} />}
+          {path && <Area dataKey="band" name="Approx. 95% range" stroke="none" fill="#d97706" fillOpacity={0.14} isAnimationActive={false} />}
+          <Line dataKey="hist" name="Historical price" stroke="#0e7490" strokeWidth={2.2} dot={history.length < 40} connectNulls isAnimationActive={false} />
+          {path && <Line dataKey="fcst" name="Estimated future price" stroke="#d97706" strokeWidth={2.2} strokeDasharray="6 4" dot={false} isAnimationActive={false} />}
         </ComposedChart>
       </ResponsiveContainer>
     </div>

@@ -61,3 +61,33 @@ def test_admin_routes_forbidden_for_users(user):
 def test_error_responses_hide_internals(user):
     r = user.get("/api/devices/DOES-NOT-EXIST")
     assert r.status_code == 404 and "Traceback" not in r.text and r.json()["code"] == "device_not_found"
+
+
+def test_multibyte_password_over_72_bytes_is_a_clean_422_not_a_500(client):
+    # 42 characters but 82 UTF-8 bytes: bcrypt >= 5 raises ValueError for this, which used to become an HTTP 500.
+    pw = "é" * 40 + "a1"
+    r = make_client().post("/api/auth/register", json={"email": "u@example.com", "full_name": "U", "password": pw})
+    assert r.status_code == 422 and r.json()["code"] == "validation_error"
+    assert "72 bytes" in r.text
+    # login with such a value is simply rejected as wrong credentials
+    r = make_client().post("/api/auth/login", json={"email": "u@example.com", "password": pw})
+    assert r.status_code == 401
+
+
+def test_multibyte_password_within_limit_works(client):
+    c = make_client()
+    pw = "pässwörd1" * 4  # 36 chars, < 72 bytes
+    assert c.post("/api/auth/register", json={"email": "m@example.com", "full_name": "M", "password": pw}).status_code == 201
+    c.post("/api/auth/logout")
+    assert make_client().post("/api/auth/login", json={"email": "m@example.com", "password": pw}).status_code == 200
+
+
+def test_register_rate_limit_is_configurable(client, monkeypatch):
+    from backend.app import ratelimit
+    from backend.app.config import get_settings
+    monkeypatch.setattr(get_settings(), "rate_limit_enabled", True)
+    ratelimit.reset_limits()
+    codes = [make_client().post("/api/auth/register", json={"email": f"r{i}@example.com", "full_name": "R", "password": "Passw0rdA1"}).status_code
+             for i in range(get_settings().register_rate_limit + 1)]
+    ratelimit.reset_limits()
+    assert codes[:-1] == [201] * get_settings().register_rate_limit and codes[-1] == 429

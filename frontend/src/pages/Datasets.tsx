@@ -5,7 +5,7 @@ import { ErrorBox, Notice, PageHeader, SampleBadge, Spinner, useAsync } from "..
 function Report({ r }: { r: ValidationReport }) {
   return (
     <div className="mt-4 space-y-3 text-sm">
-      <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-6">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-3 lg:grid-cols-6">
         {([["Rows read", r.total_rows], ["Valid", r.valid_rows], ["Invalid", r.invalid_rows], ["Duplicates (file)", r.duplicates_in_file], ["Already stored", r.duplicates_existing], ["Missing values", r.missing_values]] as const)
           .map(([k, v]) => <div key={k} className="rounded border border-line p-2"><div className="text-xs text-muted">{k}</div><div className="text-lg font-semibold">{v}</div></div>)}
       </div>

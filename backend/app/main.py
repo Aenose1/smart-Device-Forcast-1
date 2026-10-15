@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 from .config import get_settings
 from .db import Base, SessionLocal, engine, get_db
 from .errors import install_handlers
-from .routers import admin, auth, dashboard, devices, predictions
+from .routers import admin, auth, dashboard, devices, predictions, public
 from .services import seed
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -58,7 +58,7 @@ def health(db: Session = Depends(get_db)):
     return {"status": "ok"}
 
 
-for r in (auth.router, devices.router, predictions.router, dashboard.router, admin.router):
+for r in (auth.router, public.router, devices.router, predictions.router, dashboard.router, admin.router):
     api.include_router(r)
 app.include_router(api)
 

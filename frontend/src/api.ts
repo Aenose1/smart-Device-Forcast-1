@@ -60,6 +60,17 @@ export interface ModelRow {
 }
 export interface LogRow { id: number; created_at: string; event: string; status: string; message: string; device_id: string | null; user: string | null; duration_ms: number }
 
+/** Human-readable reason for a failed request. A dev-proxy failure (backend not running) comes back as an HTML/empty
+ *  500/502/503/504 without JSON, which used to show only "Request failed." */
+function explain(status: number, data: any): string {
+  const fieldMsg = data?.details?.errors?.map((e: any) => `${e.field}: ${e.message}`).join("; ");
+  if (fieldMsg) return fieldMsg;
+  if (typeof data?.detail === "string") return data.detail;
+  if ([500, 502, 503, 504].includes(status))
+    return "The server did not answer correctly. Make sure the backend is running (uvicorn on port 8000) and try again.";
+  return `Request failed (HTTP ${status}).`;
+}
+
 async function request<T>(method: string, url: string, body?: unknown, form?: FormData): Promise<T> {
   let res: Response;
   try {
@@ -69,14 +80,13 @@ async function request<T>(method: string, url: string, body?: unknown, form?: Fo
       body: form ?? (body !== undefined ? JSON.stringify(body) : undefined),
     });
   } catch {
-    throw new ApiError(0, "network", "Cannot reach the server. Check your connection and try again.");
+    throw new ApiError(0, "network", "Cannot reach the server. Check your connection and that the backend is running, then try again.");
   }
   if (res.status === 204) return undefined as T;
   const data = await res.json().catch(() => null);
   if (!res.ok) {
     if (res.status === 401 && !url.includes("/auth/")) window.dispatchEvent(new Event("auth:expired"));
-    const fieldMsg = data?.details?.errors?.map((e: any) => `${e.field}: ${e.message}`).join("; ");
-    throw new ApiError(res.status, data?.code ?? "error", fieldMsg || data?.detail || "Request failed.", data?.details);
+    throw new ApiError(res.status, data?.code ?? "error", explain(res.status, data), data?.details);
   }
   return data as T;
 }
@@ -88,7 +98,13 @@ const qs = (p: Record<string, string | number | undefined | null>) => {
   return s ? `?${s}` : "";
 };
 
+export interface PublicOverview {
+  brands: Record<string, { brand: string; devices: number }[]>; featured: Device[]; total_devices: number;
+}
+
 export const api = {
+  health: () => request<{ status: string }>("GET", "/api/health"),
+  publicOverview: () => request<PublicOverview>("GET", "/api/public/overview"),
   register: (b: { email: string; full_name: string; password: string }) => request<User>("POST", "/api/auth/register", b),
   login: (b: { email: string; password: string }) => request<User>("POST", "/api/auth/login", b),
   logout: () => request<void>("POST", "/api/auth/logout"),

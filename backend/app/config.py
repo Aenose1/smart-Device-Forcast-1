@@ -21,6 +21,8 @@ class Settings(BaseSettings):
     cors_origins: str = "http://localhost:5173"
     max_upload_mb: int = 10
     rate_limit_enabled: bool = True
+    login_rate_limit: int = 10          # attempts per minute per client IP
+    register_rate_limit: int = 20       # attempts per hour per client IP
     max_forecast_years: int = 5
     default_forecast_years: int = 3
     models_dir: str = "models"

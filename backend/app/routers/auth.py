@@ -22,7 +22,7 @@ def _set_cookie(resp: Response, user: User) -> None:
                     max_age=settings.access_token_minutes * 60, path="/")
 
 
-@router.post("/register", response_model=UserOut, status_code=201, dependencies=[Depends(limiter("register", 10, 3600))])
+@router.post("/register", response_model=UserOut, status_code=201, dependencies=[Depends(limiter("register", settings.register_rate_limit, 3600))])
 def register(body: RegisterIn, response: Response, db: Session = Depends(get_db)):
     if db.execute(select(User.id).where(User.email == body.email)).first():
         raise AppError(409, "email_taken", "An account with this e-mail already exists.")
@@ -37,7 +37,7 @@ def register(body: RegisterIn, response: Response, db: Session = Depends(get_db)
     return user
 
 
-@router.post("/login", response_model=UserOut, dependencies=[Depends(limiter("login", 10, 60))])
+@router.post("/login", response_model=UserOut, dependencies=[Depends(limiter("login", settings.login_rate_limit, 60))])
 def login(body: LoginIn, response: Response, db: Session = Depends(get_db)):
     user = db.execute(select(User).where(User.email == body.email)).scalar_one_or_none()
     if user is None:

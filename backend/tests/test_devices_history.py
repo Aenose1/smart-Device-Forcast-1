@@ -1,4 +1,4 @@
-from .conftest import add_device
+from .conftest import add_device, make_client
 
 
 def test_search_filters(user):
@@ -57,3 +57,16 @@ def test_history_csv_download(user):
     r = user.get("/api/devices/LP001/history", params={"format": "csv"})
     assert r.status_code == 200 and r.text.splitlines()[0] == "device_id,device_name,category,date,price,source,currency"
     assert len(r.text.strip().splitlines()) == 7
+
+
+def test_public_overview_needs_no_login_and_exposes_only_catalogue_data(client):
+    add_device("LP900", "Test Laptop Q", "Laptop", brand="Acme")
+    add_device("SP900", "Test Phone Q", "Smartphone", brand="Zeta")
+    r = make_client().get("/api/public/overview")
+    assert r.status_code == 200
+    body = r.json()
+    assert [b["brand"] for b in body["brands"]["Laptop"]] == ["Acme"] and [b["brand"] for b in body["brands"]["Smartphone"]] == ["Zeta"]
+    assert {d["id"] for d in body["featured"]} == {"LP900", "SP900"} and body["total_devices"] == 2
+    assert "email" not in r.text and "password" not in r.text
+    # the rest of the catalogue stays protected
+    assert make_client().get("/api/devices").status_code == 401

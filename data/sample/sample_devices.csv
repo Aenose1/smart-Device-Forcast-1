@@ -1,13 +1,119 @@
 device_id,name,brand,category,release_date,launch_price,currency,status,specs
-LP001,Demo Titan 16 Gaming,Acme,Laptop,2024-03-01,129999,INR,Active,RAM=16 GB;Storage=1 TB;Display=16 inch;GPU=Dedicated 8 GB
-LP002,Demo Aero 14 Ultrabook,Zenith,Laptop,2024-06-01,89999,INR,Active,RAM=16 GB;Storage=512 GB;Display=14 inch;GPU=Integrated
-LP003,Demo Studio 15 Creator,Nova,Laptop,2024-01-01,149999,INR,Active,RAM=32 GB;Storage=1 TB;Display=15.6 inch;GPU=Dedicated 12 GB
-LP004,Demo Office 15 Everyday,Orbit,Laptop,2024-09-01,54999,INR,Active,RAM=8 GB;Storage=512 GB;Display=15.6 inch;GPU=Integrated
-LP005,Demo Blade 17 Pro,Acme,Laptop,2024-11-01,169999,INR,Active,RAM=32 GB;Storage=2 TB;Display=17 inch;GPU=Dedicated 16 GB
-LP006,Demo Flex 13 Convertible,Kestrel,Laptop,2025-09-01,99999,INR,Active,RAM=16 GB;Storage=512 GB;Display=13.3 inch;GPU=Integrated
-SP001,Demo Nova X Ultra,Nova,Smartphone,2024-02-01,124999,INR,Active,RAM=12 GB;Storage=512 GB;Display=6.8 inch;Battery=5000 mAh;Camera=200 MP
-SP002,Demo Orbit 9 Pro,Orbit,Smartphone,2024-05-01,99999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.7 inch;Battery=4800 mAh;Camera=50 MP
-SP003,Demo Zenith S Lite,Zenith,Smartphone,2024-08-01,34999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.5 inch;Battery=5000 mAh;Camera=64 MP
-SP004,Demo Kestrel One,Kestrel,Smartphone,2024-04-01,69999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.4 inch;Battery=4500 mAh;Camera=50 MP
-SP005,Demo Acme Fold,Acme,Smartphone,2024-10-01,159999,INR,Active,RAM=12 GB;Storage=512 GB;Display=7.6 inch;Battery=4400 mAh;Camera=50 MP
-SP006,Demo Nova Mini,Nova,Smartphone,2025-08-01,44999,INR,Active,RAM=6 GB;Storage=128 GB;Display=6.1 inch;Battery=4000 mAh;Camera=48 MP
+SP101,OnePlus 12,OnePlus,Smartphone,2024-01-01,64999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.82 inch;Battery=5400 mAh;Camera=50 MP;Processor=Snapdragon 8 Gen 3
+SP102,OnePlus 13,OnePlus,Smartphone,2025-01-01,69999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.82 inch;Battery=6000 mAh;Camera=50 MP;Processor=Snapdragon 8 Elite
+SP103,OnePlus 13R,OnePlus,Smartphone,2025-01-01,42999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.78 inch;Battery=6000 mAh;Camera=50 MP;Processor=Snapdragon 8 Gen 3
+SP104,OnePlus Nord 4,OnePlus,Smartphone,2024-07-01,29999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.74 inch;Battery=5500 mAh;Camera=50 MP;Processor=Snapdragon 7+ Gen 3
+SP105,OnePlus Nord CE4,OnePlus,Smartphone,2024-04-01,24999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.7 inch;Battery=5500 mAh;Camera=50 MP;Processor=Snapdragon 7 Gen 3
+SP106,Redmi Note 13 Pro+ 5G,Redmi,Smartphone,2024-01-01,31999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.67 inch;Battery=5000 mAh;Camera=200 MP;Processor=Dimensity 7200 Ultra
+SP107,Redmi Note 13 5G,Redmi,Smartphone,2024-01-01,17999,INR,Active,RAM=6 GB;Storage=128 GB;Display=6.67 inch;Battery=5000 mAh;Camera=108 MP;Processor=Dimensity 6080
+SP108,Redmi Note 14 Pro+ 5G,Redmi,Smartphone,2024-12-01,29999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.67 inch;Battery=5110 mAh;Camera=50 MP;Processor=Snapdragon 7s Gen 3
+SP109,Redmi Note 14 5G,Redmi,Smartphone,2024-12-01,17999,INR,Active,RAM=6 GB;Storage=128 GB;Display=6.67 inch;Battery=5110 mAh;Camera=50 MP;Processor=Dimensity 7025 Ultra
+SP110,Redmi 13 5G,Redmi,Smartphone,2024-07-01,13999,INR,Active,RAM=6 GB;Storage=128 GB;Display=6.79 inch;Battery=5030 mAh;Camera=108 MP;Processor=Snapdragon 4 Gen 2 AE
+SP111,Xiaomi 14,Xiaomi,Smartphone,2024-02-01,69999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.36 inch;Battery=4610 mAh;Camera=50 MP;Processor=Snapdragon 8 Gen 3
+SP112,Xiaomi 14 Civi,Xiaomi,Smartphone,2024-06-01,42999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.55 inch;Battery=4700 mAh;Camera=50 MP;Processor=Snapdragon 8s Gen 3
+SP113,Xiaomi 15,Xiaomi,Smartphone,2025-03-01,64999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.36 inch;Battery=5240 mAh;Camera=50 MP;Processor=Snapdragon 8 Elite
+SP114,Samsung Galaxy S24,Samsung,Smartphone,2024-01-01,79999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.2 inch;Battery=4000 mAh;Camera=50 MP;Processor=Exynos 2400
+SP115,Samsung Galaxy S24 Ultra,Samsung,Smartphone,2024-01-01,129999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.8 inch;Battery=5000 mAh;Camera=200 MP;Processor=Snapdragon 8 Gen 3 for Galaxy
+SP116,Samsung Galaxy S25,Samsung,Smartphone,2025-02-01,80999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.2 inch;Battery=4000 mAh;Camera=50 MP;Processor=Snapdragon 8 Elite for Galaxy
+SP117,Samsung Galaxy A35 5G,Samsung,Smartphone,2024-03-01,30999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.6 inch;Battery=5000 mAh;Camera=50 MP;Processor=Exynos 1380
+SP118,Samsung Galaxy A55 5G,Samsung,Smartphone,2024-03-01,39999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.6 inch;Battery=5000 mAh;Camera=50 MP;Processor=Exynos 1480
+SP119,Samsung Galaxy M35 5G,Samsung,Smartphone,2024-07-01,19999,INR,Active,RAM=6 GB;Storage=128 GB;Display=6.6 inch;Battery=6000 mAh;Camera=50 MP;Processor=Exynos 1380
+SP120,Samsung Galaxy M55 5G,Samsung,Smartphone,2024-04-01,26999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.7 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 7 Gen 1
+SP121,iPhone 15,Apple,Smartphone,2023-09-01,79900,INR,Active,RAM=6 GB;Storage=128 GB;Display=6.1 inch;Battery=3349 mAh;Camera=48 MP;Processor=A16 Bionic
+SP122,iPhone 16,Apple,Smartphone,2024-09-01,79900,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.1 inch;Battery=3561 mAh;Camera=48 MP;Processor=A18
+SP123,iPhone 16 Pro,Apple,Smartphone,2024-09-01,119900,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.3 inch;Battery=3582 mAh;Camera=48 MP;Processor=A18 Pro
+SP124,iPhone 16 Pro Max,Apple,Smartphone,2024-09-01,144900,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.9 inch;Battery=4685 mAh;Camera=48 MP;Processor=A18 Pro
+SP125,iPhone 16e,Apple,Smartphone,2025-02-01,59900,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.1 inch;Battery=4005 mAh;Camera=48 MP;Processor=A18
+SP126,vivo V30,vivo,Smartphone,2024-03-01,33999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.78 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 7 Gen 3
+SP127,vivo V40,vivo,Smartphone,2024-08-01,34999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.78 inch;Battery=5500 mAh;Camera=50 MP;Processor=Snapdragon 7 Gen 3
+SP128,vivo V50,vivo,Smartphone,2025-02-01,34999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.77 inch;Battery=6000 mAh;Camera=50 MP;Processor=Snapdragon 7 Gen 3
+SP129,vivo T3 5G,vivo,Smartphone,2024-03-01,19999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.67 inch;Battery=5000 mAh;Camera=50 MP;Processor=Dimensity 7200
+SP130,vivo T3 Ultra 5G,vivo,Smartphone,2024-09-01,31999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.78 inch;Battery=5500 mAh;Camera=50 MP;Processor=Dimensity 9200+
+SP131,vivo T4 5G,vivo,Smartphone,2025-03-01,21999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.77 inch;Battery=7300 mAh;Camera=50 MP;Processor=Snapdragon 7s Gen 3
+SP132,OPPO Reno11 5G,OPPO,Smartphone,2024-01-01,29999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.7 inch;Battery=5000 mAh;Camera=50 MP;Processor=Dimensity 7050
+SP133,OPPO Reno12 Pro 5G,OPPO,Smartphone,2024-07-01,36999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.7 inch;Battery=5000 mAh;Camera=50 MP;Processor=Dimensity 7300 Energy
+SP134,OPPO Reno13 Pro 5G,OPPO,Smartphone,2025-01-01,49999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.83 inch;Battery=5800 mAh;Camera=50 MP;Processor=Dimensity 8350
+SP135,OPPO A3 Pro 5G,OPPO,Smartphone,2024-04-01,17999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.67 inch;Battery=5000 mAh;Camera=50 MP;Processor=Dimensity 6300
+SP136,OPPO A59 5G,OPPO,Smartphone,2023-12-01,14999,INR,Active,RAM=4 GB;Storage=128 GB;Display=6.56 inch;Battery=5000 mAh;Camera=13 MP;Processor=Dimensity 6020
+SP137,realme 13 Pro+ 5G,realme,Smartphone,2024-07-01,32999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.7 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 7s Gen 2
+SP138,realme 14 Pro+ 5G,realme,Smartphone,2025-01-01,29999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.83 inch;Battery=6000 mAh;Camera=50 MP;Processor=Snapdragon 7s Gen 3
+SP139,realme GT 6,realme,Smartphone,2024-06-01,40999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.78 inch;Battery=5500 mAh;Camera=50 MP;Processor=Snapdragon 8s Gen 3
+SP140,realme Narzo 70 Pro 5G,realme,Smartphone,2024-03-01,19999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.67 inch;Battery=5000 mAh;Camera=50 MP;Processor=Dimensity 7050
+SP141,realme Narzo 70x 5G,realme,Smartphone,2024-04-01,11999,INR,Active,RAM=4 GB;Storage=128 GB;Display=6.72 inch;Battery=5000 mAh;Camera=50 MP;Processor=Dimensity 6100+
+SP142,realme Narzo 80 Pro 5G,realme,Smartphone,2025-04-01,19999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.77 inch;Battery=6000 mAh;Camera=50 MP;Processor=Dimensity 7400
+SP143,Google Pixel 8,Google,Smartphone,2023-10-01,75999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.2 inch;Battery=4575 mAh;Camera=50 MP;Processor=Google Tensor G3
+SP144,Google Pixel 8a,Google,Smartphone,2024-05-01,52999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.1 inch;Battery=4492 mAh;Camera=64 MP;Processor=Google Tensor G3
+SP145,Google Pixel 9,Google,Smartphone,2024-08-01,79999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.3 inch;Battery=4700 mAh;Camera=50 MP;Processor=Google Tensor G4
+SP146,Google Pixel 9 Pro XL,Google,Smartphone,2024-08-01,124999,INR,Active,RAM=16 GB;Storage=256 GB;Display=6.8 inch;Battery=5060 mAh;Camera=50 MP;Processor=Google Tensor G4
+SP147,Google Pixel 9a,Google,Smartphone,2025-04-01,49999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.3 inch;Battery=5100 mAh;Camera=48 MP;Processor=Google Tensor G4
+SP148,Motorola Edge 50 Pro,Motorola,Smartphone,2024-04-01,31999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.7 inch;Battery=4500 mAh;Camera=50 MP;Processor=Snapdragon 7 Gen 3
+SP149,Motorola Edge 50 Fusion,Motorola,Smartphone,2024-05-01,22999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.7 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 7s Gen 2
+SP150,Motorola Edge 60 Pro,Motorola,Smartphone,2025-04-01,29999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.67 inch;Battery=6000 mAh;Camera=50 MP;Processor=Dimensity 8350 Extreme
+SP151,Moto G84 5G,Motorola,Smartphone,2023-09-01,19999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.55 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 695
+SP152,Moto G85 5G,Motorola,Smartphone,2024-07-01,17999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.67 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 6s Gen 3
+SP153,POCO X6 Pro 5G,POCO,Smartphone,2024-01-01,26999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.67 inch;Battery=5000 mAh;Camera=64 MP;Processor=Dimensity 8300 Ultra
+SP154,POCO X7 Pro 5G,POCO,Smartphone,2025-01-01,27999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.67 inch;Battery=6550 mAh;Camera=50 MP;Processor=Dimensity 8400 Ultra
+SP155,POCO F6,POCO,Smartphone,2024-05-01,29999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.67 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 8s Gen 3
+SP156,POCO F7,POCO,Smartphone,2025-06-01,31999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.83 inch;Battery=6500 mAh;Camera=50 MP;Processor=Snapdragon 8s Gen 4
+SP157,POCO M6 Pro 5G,POCO,Smartphone,2024-01-01,9999,INR,Active,RAM=4 GB;Storage=128 GB;Display=6.79 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 4 Gen 2
+SP158,POCO M7 Pro 5G,POCO,Smartphone,2024-12-01,14999,INR,Active,RAM=6 GB;Storage=128 GB;Display=6.67 inch;Battery=5110 mAh;Camera=50 MP;Processor=Dimensity 7025 Ultra
+SP159,Nothing Phone (2a),Nothing,Smartphone,2024-03-01,23999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.7 inch;Battery=5000 mAh;Camera=50 MP;Processor=Dimensity 7200 Pro
+SP160,Nothing Phone (2a) Plus,Nothing,Smartphone,2024-07-01,27999,INR,Active,RAM=8 GB;Storage=256 GB;Display=6.7 inch;Battery=5000 mAh;Camera=50 MP;Processor=Dimensity 7350 Pro
+SP161,Nothing Phone (3a),Nothing,Smartphone,2025-03-01,24999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.77 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 7s Gen 3
+SP162,Nothing Phone (3a) Pro,Nothing,Smartphone,2025-03-01,29999,INR,Active,RAM=8 GB;Storage=128 GB;Display=6.77 inch;Battery=5000 mAh;Camera=50 MP;Processor=Snapdragon 7s Gen 3
+SP163,Nothing Phone (3),Nothing,Smartphone,2025-07-01,79999,INR,Active,RAM=12 GB;Storage=256 GB;Display=6.67 inch;Battery=5150 mAh;Camera=50 MP;Processor=Snapdragon 8s Gen 4
+LP101,Acer Aspire 5 (A515-58M),Acer,Laptop,2023-08-01,54990,INR,Active,RAM=16 GB;Storage=512 GB;Display=15.6 inch;GPU=Intel Iris Xe;Refresh rate=60 Hz;Processor=Intel Core i5-1335U;Laptop type=Student
+LP102,Acer Swift Go 14,Acer,Laptop,2023-09-01,74990,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.0 inch;GPU=Intel Iris Xe;Refresh rate=90 Hz;Processor=Intel Core i5-13500H;Laptop type=General
+LP103,Acer Swift 14 AI,Acer,Laptop,2024-09-01,109990,INR,Active,RAM=16 GB;Storage=1 TB;Display=14.0 inch;GPU=Intel Arc (integrated);Refresh rate=120 Hz;Processor=Intel Core Ultra 7 155H;Laptop type=General
+LP104,Acer Nitro V 15,Acer,Laptop,2024-01-01,69990,INR,Active,RAM=16 GB;Storage=512 GB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 2050;Refresh rate=144 Hz;Processor=Intel Core i5-13420H;Laptop type=Gaming
+LP105,Acer Nitro 16,Acer,Laptop,2024-02-01,114990,INR,Active,RAM=16 GB;Storage=512 GB;Display=16.0 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=165 Hz;Processor=AMD Ryzen 7 7840HS;Laptop type=Gaming
+LP106,Acer Predator Helios Neo 16,Acer,Laptop,2024-03-01,139999,INR,Active,RAM=16 GB;Storage=1 TB;Display=16.0 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=165 Hz;Processor=Intel Core i7-14700HX;Laptop type=Gaming
+LP107,Acer Predator Helios 16,Acer,Laptop,2023-06-01,229999,INR,Active,RAM=32 GB;Storage=1 TB;Display=16.0 inch;GPU=NVIDIA GeForce RTX 4070;Refresh rate=240 Hz;Processor=Intel Core i9-13900HX;Laptop type=Gaming
+LP108,Acer TravelMate P2,Acer,Laptop,2023-10-01,62990,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.0 inch;GPU=Intel UHD (integrated);Refresh rate=60 Hz;Processor=Intel Core i5-1335U;Laptop type=Business
+LP109,ASUS Vivobook 15 (X1502),ASUS,Laptop,2023-06-01,44990,INR,Active,RAM=8 GB;Storage=512 GB;Display=15.6 inch;GPU=Intel UHD (integrated);Refresh rate=60 Hz;Processor=Intel Core i5-1235U;Laptop type=Student
+LP110,ASUS Vivobook 16,ASUS,Laptop,2024-02-01,59990,INR,Active,RAM=16 GB;Storage=512 GB;Display=16.0 inch;GPU=Intel UHD (integrated);Refresh rate=60 Hz;Processor=Intel Core i5-13420H;Laptop type=General
+LP111,ASUS Zenbook 14 OLED (UX3405),ASUS,Laptop,2024-03-01,109990,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.0 inch;GPU=Intel Arc (integrated);Refresh rate=120 Hz;Processor=Intel Core Ultra 7 155H;Laptop type=General
+LP112,ASUS Zenbook S 14,ASUS,Laptop,2024-09-01,149990,INR,Active,RAM=32 GB;Storage=1 TB;Display=14.0 inch;GPU=Intel Arc (integrated);Refresh rate=120 Hz;Processor=Intel Core Ultra 7 258V;Laptop type=General
+LP113,ASUS TUF Gaming A15,ASUS,Laptop,2024-01-01,104990,INR,Active,RAM=16 GB;Storage=512 GB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=144 Hz;Processor=AMD Ryzen 7 7735HS;Laptop type=Gaming
+LP114,ASUS ROG Strix G16,ASUS,Laptop,2024-02-01,139990,INR,Active,RAM=16 GB;Storage=1 TB;Display=16.0 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=165 Hz;Processor=Intel Core i7-13650HX;Laptop type=Gaming
+LP115,Lenovo IdeaPad Slim 3,Lenovo,Laptop,2024-01-01,52990,INR,Active,RAM=16 GB;Storage=512 GB;Display=15.6 inch;GPU=Intel UHD (integrated);Refresh rate=60 Hz;Processor=Intel Core i5-13420H;Laptop type=Student
+LP116,Lenovo IdeaPad Slim 5,Lenovo,Laptop,2024-03-01,71990,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.0 inch;GPU=AMD Radeon (integrated);Refresh rate=60 Hz;Processor=AMD Ryzen 7 7730U;Laptop type=General
+LP117,Lenovo ThinkPad E14 Gen 5,Lenovo,Laptop,2023-09-01,71990,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.0 inch;GPU=Intel Iris Xe;Refresh rate=60 Hz;Processor=Intel Core i5-1335U;Laptop type=Business
+LP118,Lenovo ThinkPad X1 Carbon Gen 12,Lenovo,Laptop,2024-04-01,214990,INR,Active,RAM=32 GB;Storage=1 TB;Display=14.0 inch;GPU=Intel Arc (integrated);Refresh rate=60 Hz;Processor=Intel Core Ultra 7 155U;Laptop type=Business
+LP119,Lenovo LOQ 15IRX9,Lenovo,Laptop,2024-05-01,79990,INR,Active,RAM=12 GB;Storage=512 GB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 3050;Refresh rate=144 Hz;Processor=Intel Core i5-12450HX;Laptop type=Gaming
+LP120,Lenovo Legion 5i Gen 9,Lenovo,Laptop,2024-06-01,159990,INR,Active,RAM=16 GB;Storage=1 TB;Display=16.0 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=165 Hz;Processor=Intel Core i7-14650HX;Laptop type=Gaming
+LP121,HP Pavilion 15,HP,Laptop,2023-07-01,66990,INR,Active,RAM=16 GB;Storage=512 GB;Display=15.6 inch;GPU=Intel Iris Xe;Refresh rate=60 Hz;Processor=Intel Core i5-1335U;Laptop type=General
+LP122,HP Pavilion Aero 13,HP,Laptop,2023-09-01,69990,INR,Active,RAM=16 GB;Storage=512 GB;Display=13.3 inch;GPU=AMD Radeon (integrated);Refresh rate=60 Hz;Processor=AMD Ryzen 5 7535U;Laptop type=General
+LP123,HP Victus 15,HP,Laptop,2023-08-01,76990,INR,Active,RAM=8 GB;Storage=512 GB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 3050;Refresh rate=144 Hz;Processor=Intel Core i5-13420H;Laptop type=Gaming
+LP124,HP OMEN 16,HP,Laptop,2023-10-01,164999,INR,Active,RAM=16 GB;Storage=1 TB;Display=16.1 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=165 Hz;Processor=Intel Core i7-13700HX;Laptop type=Gaming
+LP125,HP Envy x360 14,HP,Laptop,2024-02-01,109999,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.0 inch;GPU=Intel Arc (integrated);Refresh rate=60 Hz;Processor=Intel Core Ultra 5 125U;Laptop type=General
+LP126,HP EliteBook 840 G10,HP,Laptop,2023-08-01,132000,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.0 inch;GPU=Intel Iris Xe;Refresh rate=60 Hz;Processor=Intel Core i5-1335U;Laptop type=Business
+LP127,Dell Inspiron 15 (3520),Dell,Laptop,2023-05-01,52990,INR,Active,RAM=8 GB;Storage=512 GB;Display=15.6 inch;GPU=Intel UHD (integrated);Refresh rate=120 Hz;Processor=Intel Core i5-1235U;Laptop type=Student
+LP128,Dell Inspiron 14 Plus,Dell,Laptop,2024-03-01,105000,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.0 inch;GPU=Intel Arc (integrated);Refresh rate=60 Hz;Processor=Intel Core Ultra 7 155H;Laptop type=General
+LP129,Dell XPS 13 (9340),Dell,Laptop,2024-04-01,139990,INR,Active,RAM=16 GB;Storage=512 GB;Display=13.4 inch;GPU=Intel Arc (integrated);Refresh rate=120 Hz;Processor=Intel Core Ultra 7 155H;Laptop type=General
+LP130,Dell XPS 15 (9530),Dell,Laptop,2023-07-01,209990,INR,Active,RAM=16 GB;Storage=512 GB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 4050;Refresh rate=60 Hz;Processor=Intel Core i7-13700H;Laptop type=General
+LP131,Dell G15 (5530),Dell,Laptop,2023-06-01,94990,INR,Active,RAM=16 GB;Storage=512 GB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 3050;Refresh rate=120 Hz;Processor=Intel Core i5-13450HX;Laptop type=Gaming
+LP132,Alienware m16 R2,Dell,Laptop,2024-05-01,249990,INR,Active,RAM=32 GB;Storage=1 TB;Display=16.0 inch;GPU=NVIDIA GeForce RTX 4070;Refresh rate=240 Hz;Processor=Intel Core Ultra 9 185H;Laptop type=Gaming
+LP133,Dell Latitude 3440,Dell,Laptop,2023-07-01,62990,INR,Active,RAM=8 GB;Storage=512 GB;Display=14.0 inch;GPU=Intel Iris Xe;Refresh rate=60 Hz;Processor=Intel Core i5-1335U;Laptop type=Business
+LP134,MSI Thin 15 (B13UC),MSI,Laptop,2023-06-01,59990,INR,Active,RAM=8 GB;Storage=512 GB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 3050;Refresh rate=144 Hz;Processor=Intel Core i5-13420H;Laptop type=Gaming
+LP135,MSI Katana 15,MSI,Laptop,2024-01-01,109990,INR,Active,RAM=16 GB;Storage=1 TB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=144 Hz;Processor=Intel Core i7-13620H;Laptop type=Gaming
+LP136,MSI Cyborg 15,MSI,Laptop,2024-02-01,79990,INR,Active,RAM=16 GB;Storage=512 GB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=144 Hz;Processor=Intel Core i7-12650H;Laptop type=Gaming
+LP137,MSI Raider GE78 HX,MSI,Laptop,2023-07-01,329990,INR,Active,RAM=32 GB;Storage=2 TB;Display=17.0 inch;GPU=NVIDIA GeForce RTX 4080;Refresh rate=240 Hz;Processor=Intel Core i9-13980HX;Laptop type=Gaming
+LP138,MSI Stealth 16 AI Studio,MSI,Laptop,2024-04-01,299990,INR,Active,RAM=32 GB;Storage=2 TB;Display=16.0 inch;GPU=NVIDIA GeForce RTX 4070;Refresh rate=240 Hz;Processor=Intel Core Ultra 9 185H;Laptop type=Gaming
+LP139,Apple MacBook Air 13 (M2),Apple,Laptop,2022-07-01,99900,INR,Active,RAM=8 GB;Storage=256 GB;Display=13.6 inch;GPU=Apple M2 GPU (integrated);Refresh rate=60 Hz;Processor=Apple M2;Laptop type=General
+LP140,Apple MacBook Air 13 (M3),Apple,Laptop,2024-03-01,114900,INR,Active,RAM=8 GB;Storage=256 GB;Display=13.6 inch;GPU=Apple M3 GPU (integrated);Refresh rate=60 Hz;Processor=Apple M3;Laptop type=General
+LP141,Apple MacBook Air 15 (M3),Apple,Laptop,2024-03-01,134900,INR,Active,RAM=8 GB;Storage=256 GB;Display=15.3 inch;GPU=Apple M3 GPU (integrated);Refresh rate=60 Hz;Processor=Apple M3;Laptop type=General
+LP142,Apple MacBook Air 13 (M4),Apple,Laptop,2025-03-01,99900,INR,Active,RAM=16 GB;Storage=256 GB;Display=13.6 inch;GPU=Apple M4 GPU (integrated);Refresh rate=60 Hz;Processor=Apple M4;Laptop type=General
+LP143,Apple MacBook Pro 14 (M3),Apple,Laptop,2023-11-01,169900,INR,Active,RAM=8 GB;Storage=512 GB;Display=14.2 inch;GPU=Apple M3 GPU (integrated);Refresh rate=120 Hz;Processor=Apple M3;Laptop type=Business
+LP144,Apple MacBook Pro 14 (M4),Apple,Laptop,2024-11-01,169900,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.2 inch;GPU=Apple M4 GPU (integrated);Refresh rate=120 Hz;Processor=Apple M4;Laptop type=Business
+LP145,Apple MacBook Pro 16 (M4 Pro),Apple,Laptop,2024-11-01,249900,INR,Active,RAM=24 GB;Storage=512 GB;Display=16.2 inch;GPU=Apple M4 Pro GPU (integrated);Refresh rate=120 Hz;Processor=Apple M4 Pro;Laptop type=Business
+LP146,Samsung Galaxy Book3,Samsung,Laptop,2023-05-01,56990,INR,Active,RAM=8 GB;Storage=512 GB;Display=15.6 inch;GPU=Intel Iris Xe;Refresh rate=60 Hz;Processor=Intel Core i5-1335U;Laptop type=Student
+LP147,Samsung Galaxy Book4,Samsung,Laptop,2024-02-01,63990,INR,Active,RAM=16 GB;Storage=512 GB;Display=15.6 inch;GPU=Intel Iris Xe;Refresh rate=60 Hz;Processor=Intel Core i5-1335U;Laptop type=General
+LP148,Samsung Galaxy Book4 Pro,Samsung,Laptop,2024-03-01,155990,INR,Active,RAM=16 GB;Storage=512 GB;Display=14.0 inch;GPU=Intel Arc (integrated);Refresh rate=120 Hz;Processor=Intel Core Ultra 7 155H;Laptop type=General
+LP149,Microsoft Surface Laptop Go 3,Microsoft,Laptop,2023-10-01,64999,INR,Active,RAM=8 GB;Storage=256 GB;Display=12.4 inch;GPU=Intel Iris Xe;Refresh rate=60 Hz;Processor=Intel Core i5-1235U;Laptop type=Student
+LP150,Microsoft Surface Laptop 6,Microsoft,Laptop,2024-04-01,129999,INR,Active,RAM=16 GB;Storage=256 GB;Display=13.5 inch;GPU=Intel Arc (integrated);Refresh rate=120 Hz;Processor=Intel Core Ultra 5 135H;Laptop type=Business
+LP151,Microsoft Surface Laptop 7,Microsoft,Laptop,2024-06-01,116999,INR,Active,RAM=16 GB;Storage=256 GB;Display=13.8 inch;GPU=Qualcomm Adreno (integrated);Refresh rate=120 Hz;Processor=Snapdragon X Plus;Laptop type=General
+LP152,Gigabyte G5 (KF5),Gigabyte,Laptop,2023-04-01,77990,INR,Active,RAM=8 GB;Storage=512 GB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=144 Hz;Processor=Intel Core i5-12500H;Laptop type=Gaming
+LP153,Gigabyte G6X,Gigabyte,Laptop,2024-03-01,105000,INR,Active,RAM=16 GB;Storage=1 TB;Display=16.0 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=165 Hz;Processor=Intel Core i7-13650HX;Laptop type=Gaming
+LP154,Gigabyte AORUS 15 (BKF),Gigabyte,Laptop,2023-05-01,129990,INR,Active,RAM=16 GB;Storage=1 TB;Display=15.6 inch;GPU=NVIDIA GeForce RTX 4060;Refresh rate=165 Hz;Processor=Intel Core i7-13700H;Laptop type=Gaming
+LP155,Gigabyte AORUS 16X,Gigabyte,Laptop,2024-04-01,209990,INR,Active,RAM=32 GB;Storage=1 TB;Display=16.0 inch;GPU=NVIDIA GeForce RTX 4070;Refresh rate=165 Hz;Processor=Intel Core i9-14900HX;Laptop type=Gaming

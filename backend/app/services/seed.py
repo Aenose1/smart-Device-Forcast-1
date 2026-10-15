@@ -9,7 +9,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from ..config import get_settings
-from ..models import Device, DeviceSpec, User
+from ..models import Device, DeviceSpec, PriceHistory, User
 from ..security import hash_password
 from . import datasets
 
@@ -23,6 +23,9 @@ def ensure_admin(db: Session) -> None:
         return
     if len(pw) < 8:
         log.warning("ADMIN_PASSWORD is shorter than 8 characters; admin not created")
+        return
+    if len(pw.encode("utf-8")) > 72:
+        log.warning("ADMIN_PASSWORD is longer than 72 bytes (bcrypt limit); admin not created")
         return
     if db.execute(select(User.id).where(User.email == email)).first():
         return
@@ -51,12 +54,44 @@ def import_devices_csv(db: Session, path) -> int:
     return n
 
 
+LEGACY_DEMO_IDS = ("LP001", "LP002", "LP003", "LP004", "LP005", "LP006", "SP001", "SP002", "SP003", "SP004", "SP005", "SP006")
+LEGACY_DEMO_BRANDS = {"Acme", "Zenith", "Nova", "Orbit", "Kestrel"}
+
+
+def sync_catalog(db: Session) -> dict:
+    """Idempotent: adds catalogue devices that are missing and ingests only price rows that do not exist yet.
+    Never updates or deletes existing devices, users, predictions or price rows, so it is safe to run repeatedly."""
+    base = settings.path(settings.sample_dir)
+    added = import_devices_csv(db, base / "sample_devices.csv")
+    content = (base / "sample_price_history_DEMO.csv").read_bytes()
+    pending = datasets.validate_only(db, content)
+    if not pending.valid_rows:
+        return {"devices_added": added, "history_rows_added": 0}
+    ds, rep = datasets.ingest_csv(db, content, "sample_price_history_DEMO.csv", None, is_sample=True)
+    return {"devices_added": added, "history_rows_added": len(rep.valid_rows), "dataset_id": ds.id}
+
+
+def retire_legacy_demo(db: Session) -> dict:
+    """Removes the old FICTIONAL demo devices (Acme/Zenith/Nova/Orbit/Kestrel, ids LP001-006 / SP001-006) that earlier
+    versions shipped. Only devices matching BOTH the id and the fictional brand are touched, and only if all of their
+    price rows are sample rows. Saved user predictions keep their snapshot (FK is SET NULL)."""
+    removed = []
+    for dev in db.execute(select(Device).where(Device.id.in_(LEGACY_DEMO_IDS))).scalars():
+        if dev.brand not in LEGACY_DEMO_BRANDS:
+            continue
+        real_rows = db.execute(select(func.count()).select_from(PriceHistory)
+                               .where(PriceHistory.device_id == dev.id, PriceHistory.is_sample.is_(False))).scalar_one()
+        if real_rows:
+            continue
+        removed.append(dev.id)
+        db.delete(dev)
+    db.commit()
+    return {"removed": removed}
+
+
 def seed_sample(db: Session, force: bool = False) -> dict:
-    """Loads data/sample/*. The price history is SYNTHETIC and flagged is_sample=True everywhere."""
+    """Loads data/sample/* when the catalogue is empty (or force=True). The price history is SYNTHETIC and flagged
+    is_sample=True everywhere. Use sync_catalog() to top up an existing database without side effects."""
     if not force and db.execute(select(func.count()).select_from(Device)).scalar_one() > 0:
         return {"skipped": "catalogue is not empty"}
-    base = settings.path(settings.sample_dir)
-    n = import_devices_csv(db, base / "sample_devices.csv")
-    content = (base / "sample_price_history_DEMO.csv").read_bytes()
-    ds, rep = datasets.ingest_csv(db, content, "sample_price_history_DEMO.csv", None, is_sample=True)
-    return {"devices": n, "history_rows": len(rep.valid_rows), "dataset_id": ds.id}
+    return sync_catalog(db)

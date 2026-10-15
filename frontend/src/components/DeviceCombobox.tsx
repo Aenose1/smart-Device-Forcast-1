@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { api, money, type Device } from "../api";
+import { Icon } from "./Icon";
 
 interface Props { onSelect: (d: Device) => void; selected?: Device | null; category?: string }
 
@@ -25,10 +26,11 @@ export default function DeviceCombobox({ onSelect, selected, category }: Props) 
 
   return (
     <div className="relative" ref={box}>
-      <input className="input" role="combobox" aria-expanded={open} aria-controls="device-options" placeholder="Search by device name or brand"
+      <Icon name="Search" className="pointer-events-none absolute left-3 top-2.5 h-4 w-4 text-muted" />
+      <input className="input pl-9" role="combobox" aria-expanded={open} aria-controls="device-options" placeholder="Search by device name or brand"
         value={q} onChange={(e) => { setQ(e.target.value); setOpen(true); }} onFocus={() => setOpen(true)} />
       {open && (
-        <ul id="device-options" role="listbox" className="absolute z-20 mt-1 max-h-72 w-full overflow-auto rounded-md border border-line bg-white shadow-lg">
+        <ul id="device-options" role="listbox" className="absolute z-20 mt-1 max-h-72 w-full overflow-auto rounded-xl border border-line bg-white shadow-lift">
           {busy && <li className="px-3 py-2 text-sm text-muted">Searching…</li>}
           {!busy && items.length === 0 && <li className="px-3 py-2 text-sm text-muted">No devices match “{q}”. Ask an administrator to add it.</li>}
           {items.map((d) => (

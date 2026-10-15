@@ -10,6 +10,8 @@ COOKIE_NAME = "access_token"
 
 
 def hash_password(password: str) -> str:
+    if len(password.encode("utf-8")) > 72:
+        raise ValueError("password is longer than bcrypt's 72-byte limit")
     return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("ascii")
 
 

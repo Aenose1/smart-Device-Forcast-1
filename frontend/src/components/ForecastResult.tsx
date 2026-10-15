@@ -1,5 +1,6 @@
 import { fmtDate, fmtNum, modelLabel, money, pct, type Prediction } from "../api";
 import PriceChart from "./PriceChart";
+import { Icon } from "./Icon";
 import { Disclaimer, Notice, SampleBadge, TrendBadge } from "./ui";
 
 export default function ForecastResult({ p }: { p: Prediction }) {
@@ -13,14 +14,14 @@ export default function ForecastResult({ p }: { p: Prediction }) {
       </div>
       {p.warnings?.map((w, i) => <Notice key={i}>{w}</Notice>)}
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <div className="card p-4">
           <div className="text-sm text-muted">Current price</div>
           <div className="mt-1 text-2xl font-semibold">{money(p.current_price, p.currency)}</div>
           <div className="mt-1 text-xs text-muted">latest known, {fmtDate(p.as_of)}</div>
         </div>
         {p.results.map((r) => (
-          <div key={r.horizon_months} className="card p-4">
+          <div key={r.horizon_months} className="card border-amber-200 bg-gradient-to-br from-white to-amber-50/60 p-4">
             <div className="text-sm text-muted">Estimated after {r.label}</div>
             <div className="mt-1 text-2xl font-semibold">{money(r.predicted_price, p.currency)}</div>
             <div className="mt-1 text-xs text-muted">
@@ -59,8 +60,8 @@ export default function ForecastResult({ p }: { p: Prediction }) {
       </div>
 
       <div className="flex flex-wrap gap-2">
-        <a className="btn btn-primary" href={`/api/predictions/${p.id}/csv`}>Download CSV</a>
-        <a className="btn" href={`/api/predictions/${p.id}/pdf`}>Download PDF report</a>
+        <a className="btn btn-primary" href={`/api/predictions/${p.id}/csv`}><Icon name="Download" className="h-4 w-4" />Download CSV</a>
+        <a className="btn" href={`/api/predictions/${p.id}/pdf`}><Icon name="FileDown" className="h-4 w-4" />Download PDF report</a>
       </div>
 
       {mi && (
@@ -81,7 +82,7 @@ export default function ForecastResult({ p }: { p: Prediction }) {
               <thead><tr>{["Candidate model", "MAE", "RMSE", "MAPE %", "R²", ""].map((h) => <th key={h} className="th">{h}</th>)}</tr></thead>
               <tbody>
                 {mi.candidates.map((c) => (
-                  <tr key={c.name} className={c.selected ? "bg-sky-50" : ""}>
+                  <tr key={c.name} className={c.selected ? "bg-indigo-50" : ""}>
                     <td className="td">{modelLabel(c.name)}</td>
                     {c.status === "ok" ? (<><td className="td">{fmtNum(c.mae)}</td><td className="td">{fmtNum(c.rmse)}</td><td className="td">{fmtNum(c.mape)}</td><td className="td">{fmtNum(c.r2)}</td><td className="td">{c.selected && "selected"}</td></>)
                       : <td className="td text-muted" colSpan={5}>{c.status}</td>}

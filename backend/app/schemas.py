@@ -33,6 +33,10 @@ class RegisterIn(BaseModel):
     def _pw(cls, v: str) -> str:
         if not (re.search(r"[A-Za-z]", v) and re.search(r"\d", v)):
             raise ValueError("Password must contain at least one letter and one digit")
+        # bcrypt only accepts 72 BYTES (not characters); bcrypt>=5 raises ValueError for more, which used to surface
+        # as an HTTP 500 for long or non-ASCII passwords.
+        if len(v.encode("utf-8")) > 72:
+            raise ValueError("Password is too long (maximum 72 bytes; accented or non-Latin characters count as 2-4 bytes each)")
         return v
 
 
