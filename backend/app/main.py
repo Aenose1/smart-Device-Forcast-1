@@ -34,9 +34,20 @@ async def lifespan(_: FastAPI):
 app = FastAPI(title="Smart Device Price Prediction & 3-Year Forecasting System", version="1.0.0", lifespan=lifespan,
               docs_url="/api/docs", openapi_url="/api/openapi.json", redoc_url=None)
 install_handlers(app)
-app.add_middleware(CORSMiddleware, allow_origins=settings.cors_list, allow_credentials=True,
-                   allow_methods=["GET", "POST", "PUT", "DELETE"], allow_headers=["Content-Type", "Authorization"])
 
+install_handlers(app)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://smart-device-forcast-1.vercel.app",
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.middleware("http")
 async def security_headers(request: Request, call_next):
