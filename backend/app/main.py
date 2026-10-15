@@ -36,7 +36,6 @@ app = FastAPI(title="Smart Device Price Prediction & 3-Year Forecasting System",
 install_handlers(app)
 
 install_handlers(app)
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -44,10 +43,13 @@ app.add_middleware(
         "http://localhost:5173",
         "http://127.0.0.1:5173",
     ],
+    allow_origin_regex=r"https://smart-device-forcast-1(?:-[a-z0-9-]+)*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
 
 @app.middleware("http")
 async def security_headers(request: Request, call_next):
@@ -61,7 +63,6 @@ async def security_headers(request: Request, call_next):
 
 
 api = APIRouter(prefix="/api")
-
 
 @api.get("/health", tags=["meta"])
 def health(db: Session = Depends(get_db)):
