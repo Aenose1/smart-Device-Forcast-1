@@ -16,11 +16,16 @@ from ..security import (COOKIE_NAME, burn_password_check, create_access_token, d
 router = APIRouter(prefix="/auth", tags=["auth"])
 settings = get_settings()
 
-
 def _set_cookie(resp: Response, user: User) -> None:
-    resp.set_cookie(COOKIE_NAME, create_access_token(user), httponly=True, samesite="lax", secure=settings.cookie_secure,
-                    max_age=settings.access_token_minutes * 60, path="/")
-
+    resp.set_cookie(
+        COOKIE_NAME,
+        create_access_token(user),
+        httponly=True,
+        samesite="none",
+        secure=True,
+        max_age=settings.access_token_minutes * 60,
+        path="/",
+    )
 
 @router.post("/register", response_model=UserOut, status_code=201, dependencies=[Depends(limiter("register", settings.register_rate_limit, 3600))])
 def register(body: RegisterIn, response: Response, db: Session = Depends(get_db)):
